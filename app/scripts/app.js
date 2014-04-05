@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('hackerpins', [
+var app = angular.module('hackerpins', [
         'ngCookies',
         'ngResource',
         'ngSanitize',
@@ -24,3 +24,9 @@ angular.module('hackerpins', [
                 redirectTo: '/'
             });
     });
+
+app.filter('moment', function () {
+    return function (text) {
+        return moment(text, "MMDDYYYY HH mm ss").fromNow();
+    }
+});
