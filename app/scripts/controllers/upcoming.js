@@ -7,4 +7,21 @@ angular.module('hackerpins')
         }).error(function (data, status, headers, config) {
             alert(status);
         });
+
+        $scope.like = function (story) {
+            $http.post('http://localhost:8080/hackerpins/api/v1/stories/' + story.id + '/like').success(function (data, status, headers, config) {
+                story.likes = data.likes;
+            }).error(function (data, status, headers, config) {
+                alert(status);
+            });
+        }
+
+        $scope.dislike = function (story) {
+            $http.post('http://localhost:8080/hackerpins/api/v1/stories/' + story.id + '/dislike').success(function (data, status, headers, config) {
+                story.dislikes = data.dislikes;
+            }).error(function (data, status, headers, config) {
+                alert(status);
+            });
+        }
+
     });

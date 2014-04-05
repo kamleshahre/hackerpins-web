@@ -3,7 +3,7 @@
         <div class="pull-right">
             <ul class="list-inline">
                 <i class="glyphicon glyphicon-tags"></i>
-                <li ng-repeat="tag in story.tags"><a ng-href="#stories/tags/{{tag}}"><h4><span class="label label-primary">{{tag}}</span></h4></a></li>
+                <li ng-repeat="tag in story.tags"><a class="btn" ng-href="#stories/tags/{{tag}}"><h4><span class="label label-primary">{{tag}}</span></h4></a></li>
             </ul>
         </div>
     </div>
@@ -26,16 +26,16 @@
     </div>
     <div class="row social">
         <div class="col-md-1">
-            <a ng-href="#stories/{{story.id}}"><i class="glyphicon glyphicon-comment"></i></a>
+            <a class="btn" ng-href="#stories/{{story.id}}"><i class="glyphicon glyphicon-comment"></i></a>
         </div>
         <div class="col-md-1">
-            {{story.likes}} <a ng-click="like(story)"><i class="glyphicon glyphicon-thumbs-up"></i></a>
+            <a class="btn" ng-click="like(story)"><i class="glyphicon glyphicon-thumbs-up"></i> {{story.likes}}</a>
         </div>
         <div class="col-md-1">
-            {{story.dislikes}} <a ng-click="dislike(story)"><i class="glyphicon glyphicon-thumbs-down"></i></a>
+            <a class="btn" ng-click="dislike(story)"><i class="glyphicon glyphicon-thumbs-down"></i> {{story.dislikes}}</a>
         </div>
         <div class="col-md-1">
-            <a ng-href="#stories/{{story.id}}/share"><i class="glyphicon glyphicon-share"></i></a>
+            <a class="btn" ng-href="#stories/{{story.id}}/share"><i class="glyphicon glyphicon-share"></i></a>
         </div>
     </div>
     <hr>
