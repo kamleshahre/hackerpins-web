@@ -26,23 +26,24 @@
       <script src="bower_components/es5-shim/es5-shim.js"></script>
       <script src="bower_components/json3/lib/json3.min.js"></script>
     <![endif]-->
-    <div class="container">
-        <div class="header">
-            <ul class="nav nav-pills pull-right">
-                <li class="active"><a href="/">Home</a></li>
-                <li><a href="about">About</a></li>
-                <li><a href="contact">Contact</a></li>
-            </ul>
-            <h3 class="text-muted">HackerPins</h3>
-        </div>
+    <div class="header">
+        <ul class="nav nav-pills pull-right">
+            <li class="active"><a href="/">Home</a></li>
+            <li><a href="about">About</a></li>
+            <li><a href="contact">Contact</a></li>
+        </ul>
+        <h3 class="text-muted">HackerPins</h3>
+    </div>
 
-        <!-- Add your site or application content here -->
-        <div ng-view=""></div>
+    <div class="container" ng-controller="TabCtrl">
+        <ul class="nav nav-tabs nav-justified">
+            <li ng-class="{ active: isActive('/')}"><a href="#/"><h4><i class="glyphicon glyphicon-fire"></i> Hot Stories</h4></a></li>
+            <li ng-class="{ active: isActive('/stories/upcoming')}"><a href="#/stories/upcoming"><h4><i class="glyphicon glyphicon-flash"></i> Upcoming Stories</h4></a></li>
+            <li ng-class="{ active: isActive('/stories/new')}"><a href="#/stories/new"><h4><i class="glyphicon glyphicon-plus"></i> New Story</h4></a></li>
+        </ul>
 
-        <div class="footer">
-            <p>♥ from Shekhar Gulati</p>
-        </div>
 
+        <div ng-view="" class="top-buffer"></div>
     </div>
 
     <!-- Google Analytics: change UA-XXXXX-X to be your site's ID -->
@@ -81,12 +82,16 @@
         <script src="bower_components/angular-route/angular-route.js"></script>
         <!-- endbuild -->
         <script src="bower_components/moment/moment.js"></script>
+        <script src="bower_components/angular-bootstrap/ui-bootstrap.js"></script>
+        <script src="bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
 
         <!-- build:js({.tmp,app}) scripts/scripts.js -->
         <script src="scripts/app.js"></script>
         <script src="scripts/controllers/main.js"></script>
         <script src="scripts/controllers/viewstory.js"></script>
         <script src="scripts/controllers/submitstory.js"></script>
+        <script src="scripts/controllers/tabs.js"></script>
+        <script src="scripts/controllers/upcoming.js"></script>
         <!-- endbuild -->
 </body>
 </html>

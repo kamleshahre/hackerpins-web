@@ -4,7 +4,8 @@ var app = angular.module('hackerpins', [
         'ngCookies',
         'ngResource',
         'ngSanitize',
-        'ngRoute'
+        'ngRoute',
+        'ui.bootstrap'
     ])
     .config(function ($routeProvider) {
         $routeProvider
@@ -15,6 +16,10 @@ var app = angular.module('hackerpins', [
             .when('/stories/new', {
                 templateUrl: 'views/submitstory.html',
                 controller: 'SubmitstoryCtrl'
+            })
+            .when('/stories/upcoming', {
+                templateUrl: 'views/upcoming.html',
+                controller: 'UpcomingCtrl'
             })
             .when('/stories/:id', {
                 templateUrl: 'views/viewstory.html',

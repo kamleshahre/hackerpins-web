@@ -5,7 +5,6 @@ angular.module('hackerpins')
 
         $scope.story = {};
         $scope.submitStory = function () {
-            console.log($scope.story);
             $http.post("http://localhost:8080/hackerpins/api/v1/stories", $scope.story).success(function (data, status, header, config) {
                 $location.path('/');
             }).error(function (data, status, header, config) {
@@ -15,7 +14,6 @@ angular.module('hackerpins')
 
         $scope.fetchUrlDetails = function () {
             if($scope.story && $scope.story.url){
-                console.log($scope.story.url);
                 $scope.isFetchingDetails = true;
                 $scope.spinner = "fa-spinner";
                 $http.get("http://localhost:8080/hackerpins/api/v1/stories/suggest?storyUrl=" + $scope.story.url).success(function (data, status, header, config) {

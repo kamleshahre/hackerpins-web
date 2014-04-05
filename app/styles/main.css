@@ -34,5 +34,12 @@ body {
     color: #000000;
 }
 
+.top-buffer {
+    margin-top: 20px;
+}
+
+.bottom-buffer {
+    margin-top: 20px;
+}
 
 
