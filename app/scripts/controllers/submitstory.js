@@ -5,6 +5,7 @@ angular.module('hackerpins')
 
         $scope.story = {};
         $scope.submitStory = function () {
+            console.log($scope.story);
             $http.post("http://localhost:8080/hackerpins/api/v1/stories", $scope.story).success(function (data, status, header, config) {
                 $location.path('/');
             }).error(function (data, status, header, config) {
