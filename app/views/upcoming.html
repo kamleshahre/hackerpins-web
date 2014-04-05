@@ -1,0 +1,41 @@
+<div class="row story" ng-repeat="story in stories">
+    <div class="row tags">
+        <div class="pull-right">
+            <ul class="list-inline">
+                <li ng-repeat="tag in story.tags"><a ng-href="#stories/tags/{{tag}}"><h4><span class="label label-primary">{{tag}}</span></h4></a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="row heading">
+        <div class="col-md-12">
+            <h2><a ng-href="{{story.url}}" target="_blank">{{story.title}}</a></h2>
+        </div>
+        <div class="col-md-3 pull-left">
+            <h4>{{story.submittedAt|date:'MMddyyyy HH mm ss'|moment}}</h4>
+        </div>
+    </div>
+    <div class="row content">
+        <div class="col-md-8">
+            <p class="lead">{{story.description}}</p>
+        </div>
+        <div class="col-md-4" ng-if="story.media.mediaUrl">
+            <img ng-src="{{story.media.mediaUrl}}" class="img-responsive" width="75%" height="250">
+        </div>
+
+    </div>
+    <div class="row social">
+        <div class="col-md-1">
+            <a ng-href="#stories/{{story.id}}"><i class="glyphicon glyphicon-comment"></i></a>
+        </div>
+        <div class="col-md-1">
+            <a ng-href="#stories/{{story.id}}/up"><i class="glyphicon glyphicon-thumbs-up"></i></a>
+        </div>
+        <div class="col-md-1">
+            <a ng-href="#stories/{{story.id}}/down"><i class="glyphicon glyphicon-thumbs-down"></i></a>
+        </div>
+        <div class="col-md-1">
+            <a ng-href="#stories/{{story.id}}/share"><i class="glyphicon glyphicon-share"></i></a>
+        </div>
+    </div>
+    <hr>
+</div>
